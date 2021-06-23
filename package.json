@@ -1,0 +1,29 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "Leetcode Tutorials",
+  "main": "index.js",
+  "author": "Janus Developer <dev@retrievo.net>",
+  "license": "MIT",
+  "scripts": {
+    "test": "env TORCRTLKEY=YOUR_PASSWORD node_modules/.bin/mocha -t 0 webdriverjs/index.spec.mjs"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-chai-friendly": "^0.7.1",
+    "eslint-plugin-cypress": "^2.2.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.12.3",
+    "eslint-plugin-react-native": "^3.6.0",
+    "prettier": "^2.3.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}

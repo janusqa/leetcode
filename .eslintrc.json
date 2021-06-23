@@ -1,0 +1,65 @@
+{
+  "plugins": [
+    "standard",
+    "node",
+    "cypress",
+    "chai-friendly",
+    "react",
+    "react-native",
+    "promise",
+    "prettier"
+  ],
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:node/recommended",
+    "plugin:cypress/recommended",
+    "plugin:react/recommended",
+    "plugin:react-native/all",
+    "plugin:promise/recommended",
+    "plugin:prettier/recommended",
+    "prettier/standard",
+    "prettier/react"
+  ],
+  "rules": {
+    "promise/catch-or-return": "off",
+    "promise/no-nesting": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "log"
+        ]
+      }
+    ],
+    "no-unused-expressions": 0,
+    "node/no-unsupported-features/es-syntax": 0,
+    "chai-friendly/no-unused-expressions": 2,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": true,
+        "jsxSingleQuote": true,
+        "bracketSpacing": true,
+        "arrowParens": "avoid"
+      }
+    ]
+  },
+  "env": {
+    "cypress/globals": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "999.999.999"
+    }
+  }
+}
