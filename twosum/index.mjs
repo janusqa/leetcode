@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 
-var twoSum = function (nums, target) {
+const twoSum = function (nums, target) {
   return [
     ...new Set(
       nums.reduce((accumulator, candidate, index1) => {
@@ -18,7 +18,7 @@ var twoSum = function (nums, target) {
   ];
 };
 
-var twoSum2 = function (nums, target) {
+const twoSum2 = function (nums, target) {
   let complement;
   let i = 0;
 
@@ -32,7 +32,7 @@ var twoSum2 = function (nums, target) {
   return [i, complement];
 };
 
-var twoSum3 = function (nums, target) {
+const twoSum3 = function (nums, target) {
   const candidates = new Map();
 
   for (const [index, num] of nums.entries()) {
