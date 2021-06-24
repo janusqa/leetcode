@@ -15,8 +15,8 @@ var addTwoNumbers = function (l1, l2) {
   let answer = null;
   let p = l1;
   let q = l2;
-  let carry = 0;
   let r = answer;
+  let carry = 0;
   let i = 0;
 
   while (p || q) {
