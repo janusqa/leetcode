@@ -28,7 +28,7 @@ var addTwoNumbers = function (l1, l2) {
       carry = 1;
     } else carry = 0;
 
-    const n = new ListNode(tally);
+    const n = new ListNode(tally, null);
     if (answer === null) {
       answer = n;
       r = answer;
