@@ -17,7 +17,6 @@ var addTwoNumbers = function (l1, l2) {
   let q = l2;
   let r = answer;
   let carry = 0;
-  let i = 0;
 
   while (p || q) {
     const p_val = p ? p.val : 0;
@@ -39,7 +38,6 @@ var addTwoNumbers = function (l1, l2) {
 
     p = p ? p.next : null;
     q = q ? q.next : null;
-    i++;
   }
   if (carry) {
     const n = new ListNode(carry, null);
