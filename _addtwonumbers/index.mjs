@@ -24,7 +24,7 @@ var addTwoNumbers = function (l1, l2) {
     const q_val = q ? q.val : 0;
     let tally = p_val + q_val + carry;
     if (tally >= 10) {
-      tally = tally - 10;
+      tally -= 10;
       carry = 1;
     } else carry = 0;
 
@@ -54,7 +54,7 @@ var addTwoNumbers = function (l1, l2) {
   // for (let i = 0; i < size; i++) {
   //   let tally = (l1[i] || 0) * 10 ** i + (l2[i] || 0) * 10 ** i + carry;
   //   if (tally >= 10 ** (i + 1)) {
-  //     tally = tally - 10 ** (i + 1);
+  //     tally -= 10 ** (i + 1);
   //     carry = 10 ** (i + 1);
   //   } else carry = 0;
   //   answer.push(tally / 10 ** i);
@@ -64,7 +64,7 @@ var addTwoNumbers = function (l1, l2) {
   // for (let i = 0; i < size; i++) {
   //   let tally = (l1[i] || 0) + (l2[i] || 0) + carry;
   //   if (tally >= 10) {
-  //     tally = tally - 10;
+  //     tally -= 10;
   //     carry = 1;
   //   } else carry = 0;
   //   answer.push(tally);
