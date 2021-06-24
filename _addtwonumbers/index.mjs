@@ -13,10 +13,10 @@
  */
 var addTwoNumbers = function (l1, l2) {
   let answer = null;
-  let r = answer;
   let p = l1;
   let q = l2;
   let carry = 0;
+  let r = answer;
   let i = 0;
 
   while (p || q) {
