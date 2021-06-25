@@ -70,21 +70,19 @@ function List(list) {
   }
 }
 
-console.log(new List([9, 9, 9, 9, 9, 9, 9]).head);
-
-// console.log(addTwoNumbers(new List([2, 4, 3]), new List([5, 6, 4])));
-// console.log(addTwoNumbers(new List([0]), new List([0])));
-// console.log(
-//   addTwoNumbers(new List([9, 9, 9, 9, 9, 9, 9]), new List([9, 9, 9, 9]))
-// );
-// console.log(
-//   addTwoNumbers(
-//     new List([
-//       9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
-//       9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
-//       9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
-//       9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
-//     ]),
-//     new List([1])
-//   )
-// );
+console.log(addTwoNumbers(new List([2, 4, 3]), new List([5, 6, 4])));
+console.log(addTwoNumbers(new List([0]), new List([0])));
+console.log(
+  addTwoNumbers(new List([9, 9, 9, 9, 9, 9, 9]), new List([9, 9, 9, 9]))
+);
+console.log(
+  addTwoNumbers(
+    new List([
+      9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
+      9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
+      9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
+      9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
+    ]),
+    new List([1])
+  )
+);
