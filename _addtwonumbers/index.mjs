@@ -23,7 +23,7 @@ var addTwoNumbers = function (l1, l2) {
     const q_val = q ? q.val : 0;
     let tally = p_val + q_val + carry;
     carry = Math.floor(tally / 10);
-    tally = tally % 10;
+    tally %= 10;
 
     const n = new ListNode(tally, null);
     if (answer === null) {
