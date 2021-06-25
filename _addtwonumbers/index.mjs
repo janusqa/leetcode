@@ -25,11 +25,6 @@ var addTwoNumbers = function (l1, l2) {
     carry = Math.floor(tally / 10);
     tally = tally % 10;
 
-    // if (tally >= 10) {
-    //   tally -= 10;
-    //   carry = 1;
-    // } else carry = 0;
-
     const n = new ListNode(tally, null);
     if (answer === null) {
       answer = n;
