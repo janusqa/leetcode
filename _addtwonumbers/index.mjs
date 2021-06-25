@@ -13,8 +13,8 @@
  */
 var addTwoNumbers = function (l1, l2) {
   let answer = null;
-  let p = l1;
-  let q = l2;
+  let p = l1.head;
+  let q = l2.head;
   let r = answer;
   let carry = 0;
 
@@ -22,10 +22,13 @@ var addTwoNumbers = function (l1, l2) {
     const p_val = p ? p.val : 0;
     const q_val = q ? q.val : 0;
     let tally = p_val + q_val + carry;
-    if (tally >= 10) {
-      tally -= 10;
-      carry = 1;
-    } else carry = 0;
+    carry = Math.floor(tally / 10);
+    tally = tally % 10;
+
+    // if (tally >= 10) {
+    //   tally -= 10;
+    //   carry = 1;
+    // } else carry = 0;
 
     const n = new ListNode(tally, null);
     if (answer === null) {
@@ -45,31 +48,6 @@ var addTwoNumbers = function (l1, l2) {
     r = n;
   }
   return answer;
-
-  // const answer = [];
-  // let carry = 0;
-  // const size = l1.length > l2.length ? l1.length : l2.length;
-  // for (let i = 0; i < size; i++) {
-  //   let tally = (l1[i] || 0) * 10 ** i + (l2[i] || 0) * 10 ** i + carry;
-  //   if (tally >= 10 ** (i + 1)) {
-  //     tally -= 10 ** (i + 1);
-  //     carry = 10 ** (i + 1);
-  //   } else carry = 0;
-  //   answer.push(tally / 10 ** i);
-  // }
-  // if (carry) answer.push(carry / carry);
-  //
-  // for (let i = 0; i < size; i++) {
-  //   let tally = (l1[i] || 0) + (l2[i] || 0) + carry;
-  //   if (tally >= 10) {
-  //     tally -= 10;
-  //     carry = 1;
-  //   } else carry = 0;
-  //   answer.push(tally);
-  // }
-  // if (carry) answer.push(carry);
-  //
-  // return answer;
 };
 
 function ListNode(val, next) {
@@ -77,17 +55,36 @@ function ListNode(val, next) {
   this.next = next === undefined ? null : next;
 }
 
-console.log(addTwoNumbers([2, 4, 3], [5, 6, 4]));
-console.log(addTwoNumbers([0], [0]));
-console.log(addTwoNumbers([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9]));
-console.log(
-  addTwoNumbers(
-    [
-      9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
-      9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
-      9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
-      9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
-    ],
-    [1]
-  )
-);
+function List(list) {
+  this.head = null;
+  let curr = this.head;
+  for (const element of list) {
+    const n = new ListNode(element, null);
+    if (this.head == null) {
+      this.head = n;
+      curr = this.head;
+    } else {
+      curr.next = n;
+      curr = n;
+    }
+  }
+}
+
+console.log(new List([9, 9, 9, 9, 9, 9, 9]).head);
+
+// console.log(addTwoNumbers(new List([2, 4, 3]), new List([5, 6, 4])));
+// console.log(addTwoNumbers(new List([0]), new List([0])));
+// console.log(
+//   addTwoNumbers(new List([9, 9, 9, 9, 9, 9, 9]), new List([9, 9, 9, 9]))
+// );
+// console.log(
+//   addTwoNumbers(
+//     new List([
+//       9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
+//       9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
+//       9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
+//       9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
+//     ]),
+//     new List([1])
+//   )
+// );
