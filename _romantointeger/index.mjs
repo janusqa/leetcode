@@ -30,8 +30,7 @@ const romanToInt = function (s) {
   //     0
   //   );
 
-  return s
-    .split('')
+  return [...s]
     .reverse()
     .reduce(
       (accumulator, currentValue, index, original) =>
