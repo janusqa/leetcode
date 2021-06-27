@@ -16,9 +16,9 @@ const longestCommonPrefix = function (strs) {
   let commonPrefix = '';
 
   for (let i = 0; i < shortestString; i++) {
-    const temp = sortedStrs[0][i];
-    if (!sortedStrs.every((str) => str[i] === temp)) return commonPrefix;
-    commonPrefix += temp;
+    if (!sortedStrs.every((str) => str[i] === sortedStrs[0][i]))
+      return commonPrefix;
+    commonPrefix += sortedStrs[0][i];
   }
 
   return commonPrefix;
