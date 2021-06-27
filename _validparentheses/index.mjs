@@ -16,7 +16,6 @@ const isValid = function (s) {
       stack.push(char);
     else stack.pop();
   }
-
   return !stack.length;
 };
 
