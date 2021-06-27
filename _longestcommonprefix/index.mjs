@@ -16,15 +16,11 @@ const longestCommonPrefix = function (strs) {
   let commonPrefix = '';
 
   for (let i = 0; i < shortestString; i++) {
-    let temp;
-    for (const [j, str] of sortedStrs.entries()) {
-      if (str.length > i) {
-        if (!j) temp = str[i];
-        else {
-          if (str[i] !== temp) return commonPrefix;
-        }
-      }
-    }
+    const temp = sortedStrs[0][i];
+    if (!sortedStrs.every((str) => str[i] === temp)) return commonPrefix;
+    // for (const str of sortedStrs) {
+    //   if (str[i] !== temp) return commonPrefix;
+    // }
     commonPrefix += temp;
   }
 
