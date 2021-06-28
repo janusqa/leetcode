@@ -63,6 +63,8 @@ function List(list) {
       curr = n;
     }
   }
+  if (this.head === null) this.head = new ListNode(null, null);
+  else curr.next = new ListNode(null, null);
 }
 
 console.log(addTwoNumbers(new List([2, 4, 3]), new List([5, 6, 4])));
