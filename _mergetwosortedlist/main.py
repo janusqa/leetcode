@@ -14,7 +14,7 @@ class Solution(object):
 
         p = l1.head
         q = l2.head
-        r = List([])
+        r = List()
         while p != None or q != None:
             if p is None:
                 r.add_node(q.val)
@@ -39,12 +39,14 @@ class Solution(object):
 
 class ListNode(object):
     def __init__(self, val=0, next=None):
+        object.__init__(self)
         self.val = val
         self.next = next
 
 
 class List(object):
-    def __init__(self, list):
+    def __init__(self, list=[]):
+        object.__init__(self)
         self.head = None
         self.tail = self.head
         for item in list:

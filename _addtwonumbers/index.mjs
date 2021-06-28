@@ -12,7 +12,7 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-  let answer = new List([]);
+  let answer = new List();
   let p = l1.head;
   let q = l2.head;
   let r = answer;
@@ -42,7 +42,7 @@ function ListNode(val = 0, next = null) {
 }
 
 class List {
-  constructor(list) {
+  constructor(list = []) {
     this.head = null;
     this.tail = this.head;
 
