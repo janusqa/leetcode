@@ -12,7 +12,7 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-  let answer = null;
+  let answer = new List([]);
   let p = l1.head;
   let q = l2.head;
   let r = answer;
@@ -25,46 +25,52 @@ var addTwoNumbers = function (l1, l2) {
     carry = Math.floor(tally / 10);
     tally %= 10;
 
-    const n = new ListNode(tally, null);
-    if (answer === null) {
-      answer = n;
-      r = answer;
-    } else {
-      r.next = n;
-      r = n;
-    }
+    answer.addNode(tally);
 
     p = p ? p.next : null;
     q = q ? q.next : null;
   }
   if (carry) {
-    const n = new ListNode(carry, null);
-    r.next = n;
-    r = n;
+    answer.addNode(carry);
   }
-  return answer;
+  return answer.toString();
 };
 
-function ListNode(val, next) {
+function ListNode(val = 0, next = null) {
   this.val = val === undefined ? 0 : val;
   this.next = next === undefined ? null : next;
 }
 
-function List(list) {
-  this.head = null;
-  let curr = this.head;
-  for (const element of list) {
-    const n = new ListNode(element, null);
-    if (this.head == null) {
-      this.head = n;
-      curr = this.head;
-    } else {
-      curr.next = n;
-      curr = n;
+class List {
+  constructor(list) {
+    this.head = null;
+    this.tail = this.head;
+
+    for (const val of list) {
+      this.addNode(val);
     }
   }
-  if (this.head === null) this.head = new ListNode(null, null);
-  else curr.next = new ListNode(null, null);
+
+  toString() {
+    let s = '';
+    let curr = this.head;
+    while (curr !== null) {
+      s = `${s}[${curr.val}]`;
+      curr = curr.next;
+    }
+    return s.length !== 0 ? s : '[]';
+  }
+
+  addNode(val) {
+    const node = new ListNode(val);
+    if (this.head === null) {
+      this.head = node;
+      this.tail = this.head;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+  }
 }
 
 console.log(addTwoNumbers(new List([2, 4, 3]), new List([5, 6, 4])));
