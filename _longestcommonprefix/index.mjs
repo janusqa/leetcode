@@ -5,8 +5,10 @@
  * @return {string}
  */
 const longestCommonPrefix = function (strs) {
-  const shortestString = Math.min(
-    ...strs.map((currentValue) => currentValue.length)
+  const shortestStringLength = strs.reduce(
+    (accummulator, currentValue) =>
+      currentValue.length < accummulator ? currentValue.length : accummulator,
+    strs[0].length
   );
 
   const sortedStrs = strs.sort((a, b) =>
@@ -15,8 +17,12 @@ const longestCommonPrefix = function (strs) {
 
   let commonPrefix = '';
 
-  for (let i = 0; i < shortestString; i++) {
-    if (!sortedStrs.every((str) => str[i] === sortedStrs[0][i]))
+  // Since list is sorted we need only check first and last stings
+  // in list of strings. We also only need to check as many chars
+  // as in the first string in sorted list, since it will be
+  // the shortes string
+  for (let i = 0; i < shortestStringLength; i++) {
+    if (sortedStrs[0][i] !== sortedStrs[sortedStrs.length - 1][i])
       return commonPrefix;
     commonPrefix += sortedStrs[0][i];
   }
@@ -26,3 +32,5 @@ const longestCommonPrefix = function (strs) {
 
 console.log(longestCommonPrefix(['flower', 'flow', 'flight']));
 console.log(longestCommonPrefix(['dog', 'racecar', '', 'car']));
+console.log(longestCommonPrefix(['dogs']));
+//console.log(longestCommonPrefix([]));

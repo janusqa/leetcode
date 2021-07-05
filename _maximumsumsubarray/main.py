@@ -1,9 +1,22 @@
+# Kadanes Algorithm
+# https://medium.com/@rsinghal757/kadanes-algorithm-dynamic-programming-how-and-why-does-it-work-3fd8849ed73d
 class Solution(object):
     def maxSubArray(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
+
+        # KADANE ALGORITHMN
+        local_maximum = nums[0] if len(nums) > 0 else 0
+        global_maximum = local_maximum
+
+        for i in range(1, len(nums)):
+            local_maximum = max(nums[i], local_maximum + nums[i])
+            if local_maximum > global_maximum:
+                global_maximum = local_maximum
+
+        return global_maximum
 
         # BRUTE FORCE APPROACH
         # tally = nums[0] if len(nums) > 0 else 0
@@ -21,26 +34,8 @@ class Solution(object):
         #     i += 1
         #     j = i
         #     ho = 0
-
+        #
         # return tally
-
-        # KADANE ALGORITHMN
-        tally = nums[0] if len(nums) > 0 else 0
-        ho = tally
-
-        # NON DESTRUCTIVE
-        for i in range(1, len(nums)):
-            ho = max(nums[i], ho + nums[i])
-            if ho > tally:
-                tally = ho
-
-        # DESTRUCTIVE
-        for i in range(1, len(nums)):
-            nums[i] = max(nums[i], nums[i - 1] + nums[i])
-            if nums[i] > tally:
-                tally = nums[i]
-
-        return tally
 
 
 print(Solution().maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
