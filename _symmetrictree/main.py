@@ -12,17 +12,15 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-
-        result = True
         stack = []
         left_ptr = root.left
         right_ptr = root.right
 
-        while (len(stack) > 0 or left_ptr != None or right_ptr != None) and result:
+        while len(stack) > 0 or left_ptr != None or right_ptr != None:
             lval = left_ptr.val if left_ptr else None
             rval = right_ptr.val if right_ptr else None
             if lval != rval:
-                result = False
+                return False
             if left_ptr:
                 stack.append(left_ptr.left)
             if right_ptr:
@@ -35,7 +33,7 @@ class Solution(object):
             left_ptr = stack.pop() if len(stack) > 0 else None
             right_ptr = stack.pop() if len(stack) > 0 else None
 
-        return result
+        return True
 
 
 # print(Solution().isSymmetric(Tree().build([1, 2, 2, 3, 4, 4, 3]).root))
