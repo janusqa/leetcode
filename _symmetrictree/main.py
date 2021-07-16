@@ -36,29 +36,30 @@ class Solution(object):
         return True
 
 
-# print(Solution().isSymmetric(Tree().build([1, 2, 2, 3, 4, 4, 3]).root))
-# print(Solution().isSymmetric(Tree().build([1, 2, 2, None, 3, None, 3]).root))
-print(
-    Solution().isSymmetric(
-        TreeNode(
-            1,
-            TreeNode(2, TreeNode(3, None, None), TreeNode(4, None, None)),
-            TreeNode(2, TreeNode(4, None, None), TreeNode(3, None, None)),
-        )
-    )
-)
+print(Solution().isSymmetric(Tree().build([1, 2, 2, 3, 4, 4, 3]).root))
+print(Solution().isSymmetric(Tree().build([1, 2, 2, None, 3, None, 3]).root))
+# print(
+#     Solution().isSymmetric(
+#         TreeNode(
+#             1,
+#             TreeNode(2, TreeNode(3, None, None), TreeNode(4, None, None)),
+#             TreeNode(2, TreeNode(4, None, None), TreeNode(3, None, None)),
+#         )
+#     )
+# )
 
-print(
-    Solution().isSymmetric(
-        TreeNode(
-            1,
-            TreeNode(2, None, TreeNode(3, None, None)),
-            TreeNode(2, None, TreeNode(3, None, None)),
-        )
-    )
-)
+# print(
+#     Solution().isSymmetric(
+#         TreeNode(
+#             1,
+#             TreeNode(2, None, TreeNode(3, None, None)),
+#             TreeNode(2, None, TreeNode(3, None, None)),
+#         )
+#     )
+# )
 
 
 # # Testing to_list
 # print(Tree().build([1, 2, 2, 3, 4, 4, 3]).to_list())
 # print(Tree().build([1, 2, 2, None, 3, None, 3]).to_list())
+# print(Tree().build([3, None, 1, 2]).to_list())
