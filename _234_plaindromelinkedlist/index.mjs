@@ -36,7 +36,7 @@ var isPalindrome = function (head) {
   let tail = null;
   let listLength = 0;
 
-  // 1. find lenght of link list.
+  // 1. find length of link list.
   //    Also mark tail of list
   while (curr) {
     tail = curr;
