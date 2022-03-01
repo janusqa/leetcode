@@ -32,7 +32,7 @@ const generate_combinations_1 = function (n) {
   if (n === 1) return ['()'];
 
   const result = [];
-  const combinations = generateParenthesis(n - 1);
+  const combinations = generate_combinations_1(n - 1);
   for (let i = 0; i < combinations.length; ++i) {
     let lb = 0;
     let rb = 1;
