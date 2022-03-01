@@ -5,6 +5,7 @@
 
 const generateParenthesis = function (n) {
   return generate_combinations(n, 0, 0);
+  //return generate_combinations_1(n);
 };
 
 const generate_combinations = function (n, lb_used, rb_used) {
@@ -27,7 +28,7 @@ const generate_combinations = function (n, lb_used, rb_used) {
   return combinations;
 };
 
-const generateParenthesis_trial_1 = function (n) {
+const generate_combinations_1 = function (n) {
   if (n === 1) return ['()'];
 
   const result = [];
@@ -61,7 +62,7 @@ console.log(generateParenthesis(1));
 console.log(generateParenthesis(2));
 console.log(generateParenthesis(3));
 console.log(generateParenthesis(4));
-// console.log(generateParenthesis(5));
-// console.log(generateParenthesis(6));
-// console.log(generateParenthesis(7));
-// console.log(generateParenthesis(8));
+console.log(generateParenthesis(5));
+console.log(generateParenthesis(6));
+console.log(generateParenthesis(7));
+console.log(generateParenthesis(8));
