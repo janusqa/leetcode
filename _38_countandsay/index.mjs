@@ -3,7 +3,7 @@
  * @return {string}
  */
 const countAndSay = function countAndSay(n) {
-    if (n == 1) return '1';
+    if (n === 1) return '1';
 
     return say(countAndSay(n - 1));
 };
