@@ -9,13 +9,15 @@ const rotate = function (matrix) {
 
     for (let row = lbound; row < ubound; row++) {
         for (let col = lbound; col < ubound; col++) {
-            let temp = matrix[row][col];
+            let rr = row;
+            let cc = col;
+            let temp = matrix[rr][cc];
             for (let i = 0; i < 4; i++) {
-                const newRow = col;
-                const newCol = n - (row + 1);
-                [temp, matrix[newRow][newCol]] = [matrix[newRow][newCol], temp];
-                row = newRow;
-                col = newCol;
+                [matrix[cc][n - (rr + 1)], temp] = [
+                    temp,
+                    matrix[cc][n - (rr + 1)],
+                ];
+                [rr, cc] = [cc, n - (rr + 1)];
             }
         }
         lbound += 1;
