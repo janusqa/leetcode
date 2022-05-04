@@ -6,15 +6,16 @@ const rotate = function (matrix) {
     const n = matrix.length;
     let lbound = 0;
     let ubound = n - 1;
+    let cache = null;
 
     for (let row = lbound; row < ubound; row++) {
         for (let col = lbound; col < ubound; col++) {
             let rr = row;
             let cc = col;
-            let temp = matrix[rr][cc];
+            cache = matrix[rr][cc];
             for (let i = 0; i < 4; i++) {
-                [matrix[cc][n - (rr + 1)], temp] = [
-                    temp,
+                [matrix[cc][n - (rr + 1)], cache] = [
+                    cache,
                     matrix[cc][n - (rr + 1)],
                 ];
                 [rr, cc] = [cc, n - (rr + 1)];
