@@ -52,7 +52,7 @@ const next = function next(position, direction, rmax, cmax, visited) {
     // if unable to move in current direction
     // move in some other direction in a
     // preferential order.
-    // order of preference is right, down, left up
+    // order of preference is right, down, left, up
     const keys = Object.keys(directions);
     for (const key of keys) {
         const mr = position[0] + directions[key][0];
